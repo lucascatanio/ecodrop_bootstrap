@@ -606,6 +606,19 @@ progress {
   height: auto;
   border-radius: 1%;
 }
+.image-container {
+  max-width: 500px;  /* Define a largura máxima do contêiner */
+  max-height: 300px; /* Define a altura máxima do contêiner */
+  overflow: hidden;  /* Garante que o conteúdo que exceder o contêiner seja ocultado */
+}
+
+.responsive-image {
+  max-width: 100%;   /* A imagem não excederá a largura do contêiner */
+  max-height: 100%;  /* A imagem não excederá a altura do contêiner */
+  height: auto;      /* Mantém a proporção da imagem */
+  width: auto;       /* Mantém a proporção da imagem */
+  display: block;    /* Remove espaço extra abaixo da imagem */
+}
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -8249,6 +8262,7 @@ textarea.form-control-lg {
 
 .text-white-50 {
   --bs-text-opacity: 1;
+
   color: #fff7ff !important;
 }
 
@@ -11221,4 +11235,43 @@ body {
 .testimonials .testimonial-item img {
   max-width: 12rem;
   box-shadow: 0px 5px 5px 0px #adb5bd;
+}
+.box {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 2s ease-out;
+}
+
+.box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.typing-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid #000;
+  font-family: monospace;
+  font-size: 1.5em;
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  visibility: hidden; /* Inicialmente escondido */
+}
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+      border-color: transparent;
+  }
+  50% {
+      border-color: black;
+  }
 }
